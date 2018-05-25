@@ -1,0 +1,7 @@
+<div class="sessions">
+  {% for section in sections %}
+    <a href="/app/projects/{{ section.ProjectId }}/sections/{{ section.id }}" class="{% if currentSection.id == section.id %}active{% endif %}">
+      {{ section.title }}
+    </a>
+  {% endfor %}
+</div>

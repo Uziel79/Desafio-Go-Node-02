@@ -1,0 +1,18 @@
+<nav>
+  {% include 'partials/sectionsList.njk' %}
+
+  <a href="#" class="btn" data-modal-open="#new-section">Nova Seção</a>
+</nav>
+<div class="modal" id="new-section">
+  <form action="/app/projects/{{ project.id }}/sections/create"
+  method="POST"
+  class="modal-content">
+    <input type="text" name="title" id="title" placeholder="Título da seção">
+    <div class="content-container">
+      <textarea name="content" id="content" class="mde" placeholder="Conteúdo da seção"></textarea>
+    </div>
+
+    <button type="submit">Salvar Seção</button>
+    <a href="#" data-modal-close="#new-section">Cancelar</a>
+  </form>
+</div>
